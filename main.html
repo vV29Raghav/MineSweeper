@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Select Level - Minesweeper</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Select Your Level</h1>
+    <p class="subtitle">Choose your challenge and begin the game</p>
+
+    <div class="cards">
+      <div class="card" onclick="startGame('beginner')">
+        <h2>3×3</h2>
+        <p>Easy Start • 3 Mines</p>
+      </div>
+
+      <div class="card" onclick="startGame('intermediate')">
+        <h2>9×9</h2>
+        <p>Classic Mode • 10 Mines</p>
+      </div>
+
+      <div class="card" onclick="startGame('expert')">
+        <h2>16×16</h2>
+        <p>Expert Mode • 40 Mines</p>
+      </div>
+
+      <div class="card custom" onclick="customLevel()">
+        <h2>Custom</h2>
+        <p>Create your own grid & mine count</p>
+      </div>
+    </div>
+
+    <button class="back-btn" onclick="goBack()">⬅ Back to Home</button>
+  </div>
+
+  <script>
+    function startGame(level) {
+      // redirect with query param to main game
+      window.location.href = `index.html?level=${level}`;
+    }
+
+    function customLevel() {
+      const size = prompt("Enter grid size (e.g., 10 for 10x10):");
+      const mines = prompt("Enter number of mines:");
+      if(size && mines) {
+        window.location.href = `index.html?level=custom&size=${size}&mines=${mines}`;
+      }
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>
