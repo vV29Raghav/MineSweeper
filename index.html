@@ -1,46 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Minesweeper - Vanilla JS</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minesweeper</title>
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div class="app" role="application" aria-label="Minesweeper game">
-<header>
-<div>
-<h1>Minesweeper</h1>
-<div class="small">Left click: reveal • Right click / F: flag</div>
-</div>
-<div class="controls">
-<div class="status">
-<div id="minesLeft">Mines: 10</div>
-<div id="timer">Time: 0s</div>
-</div>
-<select id="difficulty" aria-label="Difficulty">
-<option value="beginner">Beginner (9×9, 10 mines)</option>
-<option value="intermediate">Intermediate (16×16, 40 mines)</option>
-</select>
-<button id="restart">Restart</button>
-</div>
-</header>
+<div class="app">
+  <header>
+    <div>
+      <h1>Minesweeper</h1>
+      <div class="small" id="playerName">Player: </div>
+      <div class="small">Left click: reveal • Right click / F: flag</div>
+    </div>
+    <div class="controls">
+      <div class="status">
+        <div id="flagCount">🚩 0</div>
+        <div id="timer">⏰ 0</div>
+      </div>
+      <button id="resetBtn">🙂</button>
+    </div>
+  </header>
 
-
-<div class="boardWrap">
-<div id="board" class="board" aria-live="polite"></div>
-<div class="sidebar">
-<div class="small">Controls</div>
-<div class="small">• Click a cell to reveal it.</div>
-<div class="small">• Right click or press 'F' to toggle flag.</div>
-<div class="small">• Press Enter / Space to reveal focused cell.</div>
-<div class="small">• Win by revealing all non-mine cells.</div>
-<div id="message" class="message"></div>
+  <div class="boardWrap">
+    <div id="board" class="board" aria-live="polite"></div>
+    <div class="sidebar">
+      <div class="small">Controls:</div>
+      <div class="small">• Click a cell to reveal it</div>
+      <div class="small">• Right click / F to toggle flag</div>
+      <div class="small">• Press Enter / Space to reveal focused cell</div>
+      <div class="small">• Win by revealing all non-mine cells</div>
+      <div id="message" class="message"></div>
+      <button class="leaderboard" onclick="goToLeaderboard()">🏆 Leaderboard</button>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-
-
-<script src="script.js"></script>
+<script src="index.js"></script>
 </body>
 </html>

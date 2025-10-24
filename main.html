@@ -1,58 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Select Level - Minesweeper</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minesweeper - Select Level</title>
 <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Select Your Level</h1>
-    <p class="subtitle">Choose your challenge and begin the game</p>
 
-    <div class="cards">
-      <div class="card" onclick="startGame('beginner')">
-        <h2>3×3</h2>
-        <p>Easy Start • 3 Mines</p>
-      </div>
+<div class="container">
+  <h1>⚡ Select Level</h1>
+  <p class="subtitle" id="usernameDisplay">Choose your challenge</p>
 
-      <div class="card" onclick="startGame('intermediate')">
-        <h2>9×9</h2>
-        <p>Classic Mode • 10 Mines</p>
-      </div>
-
-      <div class="card" onclick="startGame('expert')">
-        <h2>16×16</h2>
-        <p>Expert Mode • 40 Mines</p>
-      </div>
-
-      <div class="card custom" onclick="customLevel()">
-        <h2>Custom</h2>
-        <p>Create your own grid & mine count</p>
-      </div>
+  <div class="cards">
+    <div class="card" onclick="startGame(1)">
+      <h2>3 x 3</h2>
+      <p>Easy • 2 Mines</p>
     </div>
 
-    <button class="back-btn" onclick="goBack()">⬅ Back to Home</button>
+    <div class="card" onclick="startGame(2)">
+      <h2>6 x 6</h2>
+      <p>Intermediate • 10 Mines</p>
+    </div>
+
+    <div class="card" onclick="startGame(3)">
+      <h2>9 x 9</h2>
+      <p>Classic • 20 Mines</p>
+    </div>
+
+    <div class="card" onclick="startGame(4)">
+      <h2>12 x 12</h2>
+      <p>Expert • 35 Mines</p>
+    </div>
+
+    <div class="card custom" onclick="customLevel()">
+      <h2>Custom</h2>
+      <p>Create your own grid & mine count</p>
+    </div>
   </div>
 
-  <script>
-    function startGame(level) {
-      // redirect with query param to main game
-      window.location.href = `index.html?level=${level}`;
-    }
+  <button class="back-btn" onclick="goBack()">⬅ Logout</button>
+</div>
 
-    function customLevel() {
-      const size = prompt("Enter grid size (e.g., 10 for 10x10):");
-      const mines = prompt("Enter number of mines:");
-      if(size && mines) {
-        window.location.href = `index.html?level=custom&size=${size}&mines=${mines}`;
-      }
-    }
+<script src="main.js"></script>
 
-    function goBack() {
-      window.history.back();
-    }
-  </script>
 </body>
 </html>
