@@ -235,6 +235,7 @@ resetBtn.addEventListener("click",()=>{
   firstClick=true;
   flaggedCount=0;
   timer=0;
+  clearInterval(timerInterval);
   setSmiley("normal");
   initGrid();
   renderBoard();
